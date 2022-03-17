@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		CAC54C4F27E38A6700CB3980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C4E27E38A6700CB3980 /* AppDelegate.swift */; };
 		CAC54C5127E38A6700CB3980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C5027E38A6700CB3980 /* SceneDelegate.swift */; };
-		CAC54C5327E38A6700CB3980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C5227E38A6700CB3980 /* ViewController.swift */; };
+		CAC54C5327E38A6700CB3980 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C5227E38A6700CB3980 /* WeatherViewController.swift */; };
 		CAC54C5627E38A6700CB3980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC54C5427E38A6700CB3980 /* Main.storyboard */; };
 		CAC54C5827E38A6900CB3980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC54C5727E38A6900CB3980 /* Assets.xcassets */; };
 		CAC54C5B27E38A6900CB3980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC54C5927E38A6900CB3980 /* LaunchScreen.storyboard */; };
 		CAC54C6627E38A6900CB3980 /* sample_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C6527E38A6900CB3980 /* sample_appTests.swift */; };
 		CAC54C7027E38A6900CB3980 /* sample_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C6F27E38A6900CB3980 /* sample_appUITests.swift */; };
 		CAC54C7227E38A6900CB3980 /* sample_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C7127E38A6900CB3980 /* sample_appUITestsLaunchTests.swift */; };
+		CAC54C8527E38CE000CB3980 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C8427E38CE000CB3980 /* WeatherService.swift */; };
+		CAC54C8827E393A600CB3980 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C8727E393A600CB3980 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		CAC54C4B27E38A6700CB3980 /* sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC54C4E27E38A6700CB3980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAC54C5027E38A6700CB3980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CAC54C5227E38A6700CB3980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAC54C5227E38A6700CB3980 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CAC54C5527E38A6700CB3980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAC54C5727E38A6900CB3980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC54C5A27E38A6900CB3980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		CAC54C6B27E38A6900CB3980 /* sample-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sample-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC54C6F27E38A6900CB3980 /* sample_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample_appUITests.swift; sourceTree = "<group>"; };
 		CAC54C7127E38A6900CB3980 /* sample_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CAC54C8427E38CE000CB3980 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		CAC54C8727E393A600CB3980 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 		CAC54C4D27E38A6700CB3980 /* sample-app */ = {
 			isa = PBXGroup;
 			children = (
+				CAC54C8627E3938700CB3980 /* Views */,
+				CAC54C8327E38B6000CB3980 /* View Controllers */,
+				CAC54C7E27E38A7800CB3980 /* Services */,
 				CAC54C4E27E38A6700CB3980 /* AppDelegate.swift */,
 				CAC54C5027E38A6700CB3980 /* SceneDelegate.swift */,
-				CAC54C5227E38A6700CB3980 /* ViewController.swift */,
 				CAC54C5427E38A6700CB3980 /* Main.storyboard */,
 				CAC54C5727E38A6900CB3980 /* Assets.xcassets */,
 				CAC54C5927E38A6900CB3980 /* LaunchScreen.storyboard */,
@@ -125,6 +131,30 @@
 				CAC54C7127E38A6900CB3980 /* sample_appUITestsLaunchTests.swift */,
 			);
 			path = "sample-appUITests";
+			sourceTree = "<group>";
+		};
+		CAC54C7E27E38A7800CB3980 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CAC54C8427E38CE000CB3980 /* WeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CAC54C8327E38B6000CB3980 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAC54C5227E38A6700CB3980 /* WeatherViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CAC54C8627E3938700CB3980 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAC54C8727E393A600CB3980 /* WeatherView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC54C5327E38A6700CB3980 /* ViewController.swift in Sources */,
+				CAC54C8827E393A600CB3980 /* WeatherView.swift in Sources */,
+				CAC54C8527E38CE000CB3980 /* WeatherService.swift in Sources */,
+				CAC54C5327E38A6700CB3980 /* WeatherViewController.swift in Sources */,
 				CAC54C4F27E38A6700CB3980 /* AppDelegate.swift in Sources */,
 				CAC54C5127E38A6700CB3980 /* SceneDelegate.swift in Sources */,
 			);
