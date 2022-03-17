@@ -53,6 +53,7 @@ struct Weather: Codable {
 struct WeatherLocation: Codable {
     let name: String?
     let localtimeEpoch: Date?
+    let region: String?
 }
 
 struct WeatherForecast: Codable {
