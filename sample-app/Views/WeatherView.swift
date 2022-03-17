@@ -8,46 +8,35 @@
 import UIKit
 
 class WeatherView: UIView {
-    private var weather: Weather? {
-        didSet {
-            render()
-        }
-    }
+    private var weather: Weather?
 
     private lazy var mainStackView: UIStackView = {
-
         let view = UIStackView(arrangedSubviews: [locationLabel, conditionsStackView])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
+        view.distribution = .fillProportionally
         return view
     }()
 
     private lazy var conditionsStackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [conditionImage, tempFLabel, tempCLabel])
+        let view = UIStackView(arrangedSubviews: [conditionImage, tempFLabel, UIView()])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .horizontal
         view.spacing = 10
-        view.alignment = .center
-        view.distribution = .equalCentering
+        view.distribution = .fillProportionally
         return view
     }()
 
     private let conditionImage: UIImageView = {
         let view = UIImageView()
-        view.widthAnchor.constraint(equalToConstant: 52).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 52).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 64).isActive = true
         return view
     }()
 
     private let tempFLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 32, weight: .bold)
-        return label
-    }()
-
-    private let tempCLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
 
@@ -66,6 +55,7 @@ class WeatherView: UIView {
 
         Task {
             self.weather = await WeatherService.shared.fetchWeather(coordinates: coordinates)
+            render()
         }
     }
 
@@ -76,20 +66,19 @@ class WeatherView: UIView {
     private func render() {
         guard
             let tempF = weather?.forecast?.tempF,
-            let tempC = weather?.forecast?.tempC,
             let icon = weather?.forecast?.condition?.icon,
             let locationName = weather?.location?.name,
             let region = weather?.location?.region,
-            let condition = weather?.forecast?.condition?.text
+            let condition = weather?.forecast?.condition?.text,
+            let localTime = weather?.location?.localtime
         else {
             // TODO: error view
             return
         }
-
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
         tempFLabel.text = "\(Int(tempF)) ℉"
-        tempCLabel.text = "\(tempC) ℃"
-        locationLabel.text = "\(condition) in \(locationName), \(region)"
-
+        locationLabel.text = "\(condition) in \(locationName), \(region) at \(formatter.string(from: localTime))"
         if let url = URL(string: "https:\(icon)"), let data = try? Data(contentsOf: url) {
             conditionImage.image = UIImage(data: data)
         }

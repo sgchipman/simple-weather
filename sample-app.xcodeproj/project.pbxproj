@@ -18,6 +18,7 @@
 		CAC54C7227E38A6900CB3980 /* sample_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C7127E38A6900CB3980 /* sample_appUITestsLaunchTests.swift */; };
 		CAC54C8527E38CE000CB3980 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C8427E38CE000CB3980 /* WeatherService.swift */; };
 		CAC54C8827E393A600CB3980 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C8727E393A600CB3980 /* WeatherView.swift */; };
+		CAC54C8A27E3AE3200CB3980 /* FollowedLocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC54C8927E3AE3200CB3980 /* FollowedLocationsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CAC54C7127E38A6900CB3980 /* sample_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CAC54C8427E38CE000CB3980 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		CAC54C8727E393A600CB3980 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		CAC54C8927E3AE3200CB3980 /* FollowedLocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedLocationsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC54C8427E38CE000CB3980 /* WeatherService.swift */,
+				CAC54C8927E3AE3200CB3980 /* FollowedLocationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC54C8A27E3AE3200CB3980 /* FollowedLocationsService.swift in Sources */,
 				CAC54C8827E393A600CB3980 /* WeatherView.swift in Sources */,
 				CAC54C8527E38CE000CB3980 /* WeatherService.swift in Sources */,
 				CAC54C5327E38A6700CB3980 /* WeatherViewController.swift in Sources */,
