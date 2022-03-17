@@ -8,11 +8,7 @@
 import UIKit
 
 class WeatherView: UIView {
-    private var weather: Weather? {
-        didSet {
-            render()
-        }
-    }
+    private var weather: Weather?
 
     private lazy var mainStackView: UIStackView = {
 
@@ -66,6 +62,7 @@ class WeatherView: UIView {
 
         Task {
             self.weather = await WeatherService.shared.fetchWeather(coordinates: coordinates)
+            render()
         }
     }
 
