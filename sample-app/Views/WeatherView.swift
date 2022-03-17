@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherView: UIView {
-    private var forecast: WeatherForecast? {
+    private var weather: Weather? {
         didSet {
             render()
         }
@@ -50,7 +50,7 @@ class WeatherView: UIView {
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
 
         Task {
-            self.forecast = await requestWeather(coordinates: coordinates)
+            self.weather = await WeatherService.shared.fetchWeather(coordinates: coordinates)
         }
     }
 
@@ -58,15 +58,11 @@ class WeatherView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func requestWeather(coordinates: Coordinates) async -> WeatherForecast? {
-       return await WeatherService.shared.fetchWeather(coordinates: coordinates)
-    }
-
     private func render() {
         guard
-            let tempF = forecast?.tempF,
-            let tempC = forecast?.tempC,
-            let icon = forecast?.condition?.icon
+            let tempF = weather?.forecast?.tempF,
+            let tempC = weather?.forecast?.tempC,
+            let icon = weather?.forecast?.condition?.icon
         else {
             // TODO: error view
             return
