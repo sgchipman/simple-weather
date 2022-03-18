@@ -10,7 +10,7 @@ class WeatherService {
 
     static let shared = WeatherService()
 
-    private let endpoint = "https://api.weatherapi.com/v1/current.json?key=2417772cc9494d49933164220202511&q=%f,%f"
+    private let endpoint = "https://api.weatherapi.com/v1/current.json?key=[API_KEY]&q=%f,%f"
 
 
     func fetchWeather(coordinates: Coordinates) async -> Weather? {
