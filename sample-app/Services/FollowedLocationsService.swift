@@ -7,7 +7,7 @@ import Foundation
 
 class FollowedLocationsService {
 
-    // Eventually this will talk to the backend and retrieve locations the user has added.
+    // Have this talk to the backend and retrieve locations the user has added.
     func fetchLocations(completion: @escaping ([Coordinates?]) -> Void) {
         completion([
             Coordinates(lat: 40.7128, lon: -74.0060),
