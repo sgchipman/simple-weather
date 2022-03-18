@@ -8,6 +8,7 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+    var locationsService: FollowedLocationsService?
 
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
@@ -25,8 +26,8 @@ class WeatherViewController: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        let locationsService = FollowedLocationsService()
-        locationsService.fetchLocations { locations in
+        locationsService = FollowedLocationsService()
+        locationsService?.fetchLocations { locations in
             for coordinates in locations {
                 let weatherView = WeatherView(coordinates: coordinates!)
                 weatherView.translatesAutoresizingMaskIntoConstraints = false
