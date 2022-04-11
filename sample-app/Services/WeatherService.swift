@@ -12,7 +12,6 @@ class WeatherService {
 
     private let endpoint = "https://api.weatherapi.com/v1/current.json?key=[API_KEY]&q=%f,%f"
 
-
     func fetchWeather(coordinates: Coordinates) async -> Weather? {
         guard
             let url = URL(string: String(format: endpoint, coordinates.lat, coordinates.lon)),
@@ -21,8 +20,12 @@ class WeatherService {
             return nil
         }
 
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYY-M-D HH:mm"
+        
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(formatter)
 
         guard
             let dictionary = try? JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [String: Any],
@@ -52,7 +55,7 @@ struct Weather: Codable {
 
 struct WeatherLocation: Codable {
     let name: String?
-    let localtimeEpoch: Date?
+    let localtime: Date?
     let region: String?
 }
 
